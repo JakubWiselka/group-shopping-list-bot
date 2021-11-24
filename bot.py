@@ -5,16 +5,16 @@ import os
 import html
 import logging
 from text import *
-
-TOKEN = open(f"{os.path.dirname(os.path.abspath(__file__))}/token.txt", "r").read()
-DB = f'{os.path.dirname(os.path.abspath(__file__))}/telebot.db'
-bot = telebot.TeleBot(TOKEN)
-logging.basicConfig(
-    filename=f'{os.path.dirname(os.path.abspath(__file__))}/logs.log', level=logging.WARNING)
+from bot_token import TOKEN
 
 if not TOKEN:
     print("Please add bot token!")
     exit()
+
+DB = f'{os.path.dirname(os.path.abspath(__file__))}/telebot.db'
+bot = telebot.TeleBot(TOKEN)
+logging.basicConfig(
+    filename=f'{os.path.dirname(os.path.abspath(__file__))}/logs.log', level=logging.WARNING)
 
 
 def _get_table_name(chat_id):
