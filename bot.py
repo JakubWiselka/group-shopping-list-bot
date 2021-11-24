@@ -6,7 +6,7 @@ import html
 import logging
 from text import *
 
-TOKEN = open("token.txt", "r").read()
+TOKEN = open(f"{os.path.dirname(os.path.abspath(__file__))}/token.txt", "r").read()
 DB = f'{os.path.dirname(os.path.abspath(__file__))}/telebot.db'
 bot = telebot.TeleBot(TOKEN)
 logging.basicConfig(
